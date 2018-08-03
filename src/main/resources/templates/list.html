@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title></title>
+</head>
+<body>
+<a href="/deposit">Make Deposit</a>
+<a href="/withdraw">Make Withdraw</a>
+<table>
+    <tr>
+        <th>Account number</th>
+        <th>Action</th>
+        <th>Amount</th>
+        <th>Reason</th>
+    </tr>
+    <tr th:each="transaction : ${transactions}">
+        <td th:text="${transaction.accountNumber}"></td>
+        <td th:text="${transaction.action}"></td>
+        <td th:text="${transaction.amount}"></td>
+        <td th:text="${transaction.reason}"></td>
+    </tr>
+</table>
+Balance: $<span th:text="${balance}"></span>
+</body>
+</html>
